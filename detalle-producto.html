@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del producto | SuperStock</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="">
+  <header class="encabezado">
+    <div class="encabezado__contenido">
+      <a href="index.html" class="marca"><span class="marca__logo"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 10h9.2L19 7H6.2M9 19a1 1 0 100 .01M17 19a1 1 0 100 .01"/></svg></span>SuperStock</a>
+      <nav class="menu" aria-label="Principal">
+        <a href="index.html" class="menu__enlace">Inicio</a>
+        <a href="productos.html" class="menu__enlace menu__enlace--activo">Productos</a>
+        <a href="registrar-producto.html" class="boton boton--primario boton--pequeno"><span aria-hidden="true">+</span><span class="menu__nuevo"> Nuevo</span></a>
+      </nav>
+    </div>
+  </header>
+  <main class="contenedor">
+    <h1 class="titulo-pagina">Detalle del producto</h1>
+    <p class="subtitulo-pagina">Información completa y código de barras.</p>
+    <div class="detalle">
+      <section class="panel">
+        <div class="detalle__cabecera">
+          <h2 class="detalle__nombre">Leche entera 1 L</h2>
+          <span class="etiqueta etiqueta--disponible">Disponible</span>
+        </div>
+        <p class="subtitulo-pagina">Leche entera pasteurizada en envase de 1 litro.</p>
+        <p class="detalle__precio">$ 4.500 <span class="texto-suave">por unidad</span></p>
+        <dl class="detalle__datos">
+          <div class="detalle__fila"><dt>Código de barras</dt><dd>7501234567893</dd></div>
+          <div class="detalle__fila"><dt>Categoría</dt><dd>Lácteos</dd></div>
+          <div class="detalle__fila"><dt>Cantidad disponible</dt><dd>40 unidad</dd></div>
+          <div class="detalle__fila"><dt>Stock mínimo</dt><dd>10</dd></div>
+          <div class="detalle__fila"><dt>Fecha de vencimiento</dt><dd>20 de nov de 2026</dd></div>
+          <div class="detalle__fila"><dt>Proveedor</dt><dd>Lácteos del Valle</dd></div>
+        </dl>
+      </section>
+      <aside class="detalle__lateral">
+        <section class="panel panel--centrado">
+          <h2 class="panel__titulo">Código de barras</h2>
+          <img src="img/barras-7501234567893.svg" alt="Código de barras 7501234567893" class="barras">
+          <p class="codigo texto-suave">7501234567893</p>
+        </section>
+        <a href="editar-producto.html" class="boton boton--primario">Editar producto</a>
+        <a href="productos.html" class="boton boton--secundario">Volver al listado</a>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
