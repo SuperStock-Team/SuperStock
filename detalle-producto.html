@@ -6,7 +6,7 @@
   <title>Detalle del producto | SuperStock</title>
   <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body class="">
+<body>
   <header class="encabezado">
     <div class="encabezado__contenido">
       <a href="index.html" class="marca"><span class="marca__logo"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 10h9.2L19 7H6.2M9 19a1 1 0 100 .01M17 19a1 1 0 100 .01"/></svg></span>SuperStock</a>
@@ -20,33 +20,43 @@
   <main class="contenedor">
     <h1 class="titulo-pagina">Detalle del producto</h1>
     <p class="subtitulo-pagina">Información completa y código de barras.</p>
-    <div class="detalle">
+
+    <p id="mensaje-no-encontrado" class="subtitulo-pagina" hidden>
+      No se encontró el producto. <a href="productos.html" class="enlace-volver">Volver al listado</a>
+    </p>
+
+    <div class="detalle" id="contenido-detalle">
       <section class="panel">
         <div class="detalle__cabecera">
-          <h2 class="detalle__nombre">Leche entera 1 L</h2>
-          <span class="etiqueta etiqueta--disponible">Disponible</span>
+          <h2 class="detalle__nombre" id="detalle-nombre"></h2>
+          <span id="detalle-estado" class="etiqueta"></span>
         </div>
-        <p class="subtitulo-pagina">Leche entera pasteurizada en envase de 1 litro.</p>
-        <p class="detalle__precio">$ 4.500 <span class="texto-suave">por unidad</span></p>
+        <p class="subtitulo-pagina" id="detalle-descripcion"></p>
+        <p class="detalle__precio"><span id="detalle-precio"></span> <span class="texto-suave" id="detalle-unidad"></span></p>
         <dl class="detalle__datos">
-          <div class="detalle__fila"><dt>Código de barras</dt><dd>7501234567893</dd></div>
-          <div class="detalle__fila"><dt>Categoría</dt><dd>Lácteos</dd></div>
-          <div class="detalle__fila"><dt>Cantidad disponible</dt><dd>40 unidad</dd></div>
-          <div class="detalle__fila"><dt>Stock mínimo</dt><dd>10</dd></div>
-          <div class="detalle__fila"><dt>Fecha de vencimiento</dt><dd>20 de nov de 2026</dd></div>
-          <div class="detalle__fila"><dt>Proveedor</dt><dd>Lácteos del Valle</dd></div>
+          <div class="detalle__fila"><dt>Código de barras</dt><dd id="detalle-codigo"></dd></div>
+          <div class="detalle__fila"><dt>Categoría</dt><dd id="detalle-categoria"></dd></div>
+          <div class="detalle__fila"><dt>Cantidad disponible</dt><dd id="detalle-cantidad"></dd></div>
+          <div class="detalle__fila"><dt>Stock mínimo</dt><dd id="detalle-minimo"></dd></div>
+          <div class="detalle__fila"><dt>Fecha de vencimiento</dt><dd id="detalle-vencimiento"></dd></div>
+          <div class="detalle__fila"><dt>Proveedor</dt><dd id="detalle-proveedor"></dd></div>
         </dl>
       </section>
       <aside class="detalle__lateral">
         <section class="panel panel--centrado">
           <h2 class="panel__titulo">Código de barras</h2>
-          <img src="img/barras-7501234567893.svg" alt="Código de barras 7501234567893" class="barras">
-          <p class="codigo texto-suave">7501234567893</p>
+          <div class="barras" id="detalle-barras"></div>
+          <p class="codigo texto-suave" id="detalle-codigo-texto"></p>
         </section>
-        <a href="editar-producto.html" class="boton boton--primario">Editar producto</a>
+        <a href="editar-producto.html" id="enlace-editar" class="boton boton--primario">Editar producto</a>
         <a href="productos.html" class="boton boton--secundario">Volver al listado</a>
       </aside>
     </div>
   </main>
+  <script src="js/almacenamiento.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/formato.js"></script>
+  <script src="js/codigo-barras.js"></script>
+  <script src="js/vista-detalle.js"></script>
 </body>
 </html>

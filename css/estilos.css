@@ -1,5 +1,7 @@
 /* ===== SuperStock - estilos.css ===== */
 
+[hidden] { display: none !important; }
+
 /* 1. Variables y base */
 :root {
   --verde: #059669;
@@ -29,7 +31,7 @@ img { max-width: 100%; }
 .icono { width: 18px; height: 18px; }
 .visualmente-oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .texto-suave { color: var(--texto-suave); font-size: 0.8rem; }
-.codigo { font-family: "SFMono-Regular", Consolas, monospace; }
+.codigo { font-family: "SFMono-Regular", Consolas, monospace; font-size: 0.8rem; color: var(--texto-suave); }
 
 /* 2. Encabezado y menú */
 .encabezado { background: var(--blanco); border-bottom: 1px solid var(--borde); }
@@ -100,10 +102,9 @@ img { max-width: 100%; }
 .tabla td { padding: 12px 16px; border-top: 1px solid var(--borde); }
 .th-acciones { text-align: right !important; }
 .producto-nombre { display: block; font-weight: 500; }
-.codigo { font-size: 0.8rem; color: var(--texto-suave); }
-.precio { font-weight: 600; }
+.precio { font-weight: 600; }s
 .acciones { text-align: right; white-space: nowrap; }
-.accion { display: inline-flex; padding: 4px; color: var(--texto-suave); }
+.accion { display: inline-flex; padding: 4px; color: var(--texto-suave); background: none; border: 0; cursor: pointer; }
 .accion:hover { color: var(--verde); }
 .accion--peligro:hover { color: var(--rojo); }
 .etiqueta { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 600; }
@@ -132,7 +133,7 @@ img { max-width: 100%; }
   padding: 8px; border: 1px dashed var(--borde); border-radius: var(--radio);
   background: var(--fondo); color: var(--texto-suave); font-size: 0.75rem; text-align: center;
 }
-.vista-previa__img { height: 70px; }
+.vista-previa__img { height: 80px; width: auto; }
 .formulario__pie { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--borde); }
 
 /* 8. Detalle */
@@ -140,7 +141,8 @@ img { max-width: 100%; }
 .panel { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 20px; box-shadow: var(--sombra); }
 .panel--centrado { text-align: center; }
 .panel__titulo { font-size: 0.85rem; text-align: left; margin-bottom: 8px; }
-.barras { width: 180px; }
+.barras { width: 180px; margin: 0 auto; }
+.barras svg { display: block; width: 100%; height: auto; }
 .detalle__lateral { display: flex; flex-direction: column; gap: 8px; }
 .detalle__cabecera { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .detalle__nombre { font-size: 1.3rem; }
@@ -150,6 +152,7 @@ img { max-width: 100%; }
 .detalle__fila { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--borde); font-size: 0.85rem; }
 .detalle__fila dt { color: var(--texto-suave); }
 .detalle__fila dd { margin: 0; font-weight: 500; text-align: right; }
+.enlace-volver { color: var(--verde); font-weight: 600; }
 
 /* 9. Ventana de confirmación (se muestra sobre el listado) */
 .modal-fondo {

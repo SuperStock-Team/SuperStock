@@ -20,14 +20,16 @@
   <main class="contenedor contenedor--estrecho">
     <h1 class="titulo-pagina">Registrar producto</h1>
     <p class="subtitulo-pagina">Completa los datos del nuevo producto.</p>
-    <form class="formulario" action="#" method="post">
+    <form class="formulario" action="#" method="post"> novalidate>
       <div class="formulario__rejilla">
         <div class="campo col-2">
           <label for="codigo">Código de barras (EAN-13) <span class="obligatorio">*</span></label>
           <input type="text" id="codigo" name="codigo" value="" placeholder="7501234567893" inputmode="numeric" pattern="[0-9]{13}" minlength="13" maxlength="13" required class="codigo">
           <p class="campo__ayuda">13 dígitos, con dígito verificador válido.</p>
         </div>
-        <div class="vista-previa"><p>La vista previa del código aparecerá cuando el código sea válido.</p></div>
+        <div class="vista-previa" id="vista-previa">
+          <p>La vista previa del código aparecerá cuando el código sea válido.</p>
+        </div>
         <div class="campo col-2">
           <label for="nombre">Nombre del producto <span class="obligatorio">*</span></label>
           <input type="text" id="nombre" name="nombre" value="" placeholder="Ej. Leche entera 1 L" required>
@@ -71,5 +73,11 @@
       </div>
     </form>
   </main>
+   <script src="js/almacenamiento.js"></script>
+   <script src="js/productos.js"></script>
+   <script src="js/validaciones.js"></script>
+   <script src="js/codigo-barras.js"></script>
+   <script src="js/vista-formulario.js"></script>
+   <script src="js/vista-registro.js"></script>
 </body>
 </html>
