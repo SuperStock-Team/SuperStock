@@ -102,7 +102,7 @@ img { max-width: 100%; }
 .tabla td { padding: 12px 16px; border-top: 1px solid var(--borde); }
 .th-acciones { text-align: right !important; }
 .producto-nombre { display: block; font-weight: 500; }
-.precio { font-weight: 600; }s
+.precio { font-weight: 600; }
 .acciones { text-align: right; white-space: nowrap; }
 .accion { display: inline-flex; padding: 4px; color: var(--texto-suave); background: none; border: 0; cursor: pointer; }
 .accion:hover { color: var(--verde); }
