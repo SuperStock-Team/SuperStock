@@ -11,7 +11,7 @@ function manejarEnvioRegistro(evento) {
   }
 
   crearProducto(datos);
-  window.location.href = "productos.html";
+  window.location.href = 'productos.html';
 }
 
-formulario.addEventListener("submit", manejarEnvioRegistro);
+formulario.addEventListener('submit', manejarEnvioRegistro);

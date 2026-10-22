@@ -1,4 +1,4 @@
-const idProductoEditado = new URLSearchParams(window.location.search).get("id");
+const idProductoEditado = new URLSearchParams(window.location.search).get('id');
 const productoEditado = buscarProductoPorId(idProductoEditado);
 
 function manejarEnvioEdicion(evento) {
@@ -14,18 +14,21 @@ function manejarEnvioEdicion(evento) {
   }
 
   actualizarProducto(idProductoEditado, datos);
-  window.location.href = "productos.html";
+
+  mostrarAviso('Producto actualizado correctamente.');
+
+  window.location.href = 'productos.html';
 }
 
 function mostrarProductoNoEncontrado() {
   formulario.hidden = true;
-  document.getElementById("mensaje-no-encontrado").hidden = false;
+  document.getElementById('mensaje-no-encontrado').hidden = false;
 }
 
 if (productoEditado) {
   rellenarFormulario(productoEditado);
   actualizarVistaPrevia();
-  formulario.addEventListener("submit", manejarEnvioEdicion);
+  formulario.addEventListener('submit', manejarEnvioEdicion);
 } else {
   mostrarProductoNoEncontrado();
 }
