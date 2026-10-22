@@ -133,6 +133,7 @@ img { max-width: 100%; }
   padding: 8px; border: 1px dashed var(--borde); border-radius: var(--radio);
   background: var(--fondo); color: var(--texto-suave); font-size: 0.75rem; text-align: center;
 }
+.vista-previa svg { height: 80px; width: auto; }
 .vista-previa__img { height: 80px; width: auto; }
 .formulario__pie { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--borde); }
 
@@ -210,4 +211,10 @@ img { max-width: 100%; }
   .formulario__pie { flex-direction: column-reverse; }
   .formulario__pie .boton { width: 100%; }
   .detalle__cabecera { flex-direction: column-reverse; align-items: flex-start; }
+}
+
+.aviso {
+  margin-bottom: 16px; padding: 12px 16px; border-radius: var(--radio);
+  background: var(--verde-claro); color: var(--verde-oscuro);
+  border: 1px solid #a7f3d0; font-size: 0.85rem; font-weight: 600;
 }

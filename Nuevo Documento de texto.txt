@@ -1,0 +1,10 @@
+SuperStock/
+├── js/
+│   ├── almacenamiento.js   → solo localStorage
+│   ├── productos.js        → lógica del CRUD y filtrado
+│   ├── vista-listado.js    → DOM del listado + buscador
+│   ├── vista-formulario.js → registro y edición
+│   └── vista-detalle.js    → detalle
+
+Eso es lo que pide tu documento del proyecto. Puedes usar estos códigos válidos para pruebas:
+7501234567893, 7501000123452 y 7505000102349.

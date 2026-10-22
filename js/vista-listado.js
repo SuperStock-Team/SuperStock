@@ -72,7 +72,7 @@ function crearCeldaAcciones(producto) {
     crearBotonEliminar(producto)
   );
   return celda;
-}s
+}
 
 function crearFilaProducto(producto) {
   const fila = document.createElement("tr");
@@ -103,3 +103,4 @@ function actualizarListado() {
 campoBuscador.addEventListener("input", actualizarListado);
 
 actualizarListado();
+mostrarAvisoPendiente();

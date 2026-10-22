@@ -22,6 +22,7 @@ function confirmarEliminacion() {
   eliminarProducto(idProductoPorEliminar);
   cerrarConfirmacion();
   actualizarListado();
+  mostrarAviso("Producto eliminado correctamente.");
 }
 
 function manejarClicTabla(evento) {

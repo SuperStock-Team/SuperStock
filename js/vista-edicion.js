@@ -14,6 +14,7 @@ function manejarEnvioEdicion(evento) {
   }
 
   actualizarProducto(idProductoEditado, datos);
+  guardarAviso("Producto «" + datos.nombre + "» actualizado correctamente.");
   window.location.href = "productos.html";
 }
 

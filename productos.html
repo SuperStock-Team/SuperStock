@@ -20,6 +20,7 @@
   <main class="contenedor">
     <h1 class="titulo-pagina">Inventario</h1>
     <p class="subtitulo-pagina">Gestiona los productos registrados en el supermercado.</p>
+    <div id="aviso" class="aviso" role="status" hidden></div>
     <div class="barra-herramientas">
       <label class="buscador"><span class="visualmente-oculto">Buscar productos</span><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></svg><input type="search" id="buscador" placeholder="Buscar por nombre, código, categoría…"></label>
       <a href="registrar-producto.html" class="boton boton--primario boton--ancho-movil">+ Nuevo producto</a>
@@ -34,7 +35,7 @@
     </div>
     <p id="mensaje-vacio" class="subtitulo-pagina" hidden>No hay productos para mostrar.</p>
   </main>
-    <div class="modal-fondo" id="modal-eliminar" hidden>
+  <div class="modal-fondo" id="modal-eliminar" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
       <span class="modal__icono"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3zM12 10v4M12 17v.01"/></svg></span>
       <h2 id="modal-titulo" class="modal__titulo">¿Eliminar producto?</h2>
@@ -48,6 +49,8 @@
   <script src="js/almacenamiento.js"></script>
   <script src="js/productos.js"></script>
   <script src="js/formato.js"></script>
+  <script src="js/aviso.js"></script>
   <script src="js/vista-listado.js"></script>
+  <script src="js/vista-eliminacion.js"></script>
 </body>
 </html>

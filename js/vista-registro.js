@@ -11,6 +11,7 @@ function manejarEnvioRegistro(evento) {
   }
 
   crearProducto(datos);
+  guardarAviso("Producto «" + datos.nombre + "» añadido correctamente.");
   window.location.href = "productos.html";
 }
 
