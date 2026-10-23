@@ -1,104 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editar producto | SuperStock</title>
-  <link rel="stylesheet" href="css/estilos.css">
-</head>
-<body>
-  <header class="encabezado">
-    <div class="encabezado__contenido">
-      <a href="index.html" class="marca"><span class="marca__logo"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 10h9.2L19 7H6.2M9 19a1 1 0 100 .01M17 19a1 1 0 100 .01"/></svg></span>SuperStock</a>
-      <nav class="menu" aria-label="Principal">
-        <a href="index.html" class="menu__enlace">Inicio</a>
-        <a href="productos.html" class="menu__enlace menu__enlace--activo">Productos</a>
-        <a href="registrar-producto.html" class="boton boton--primario boton--pequeno"><span aria-hidden="true">+</span><span class="menu__nuevo"> Nuevo</span></a>
-      </nav>
-    </div>
-  </header>
-  <main class="contenedor contenedor--estrecho">
-    <h1 class="titulo-pagina">Editar producto</h1>
-    <p class="subtitulo-pagina">Modifica los campos y guarda los cambios.</p>
-
-    <p id="mensaje-no-encontrado" class="subtitulo-pagina" hidden>
-      No se encontró el producto. <a href="productos.html" class="enlace-volver">Volver al listado</a>
-    </p>
-
-    <form class="formulario" action="#" method="post" novalidate>
-      <div class="formulario__rejilla">
-        <div class="campo col-2">
-          <label for="codigo">Código de barras (EAN-13) <span class="obligatorio">*</span></label>
-          <input type="text" id="codigo" name="codigo" class="codigo" placeholder="7501234567893" inputmode="numeric" pattern="[0-9]{13}" minlength="13" maxlength="13" required>
-          <p class="campo__ayuda">13 dígitos, con dígito verificador válido.</p>
-        </div>
-        <div class="vista-previa" id="vista-previa"></div>
-
-        <div class="campo col-2">
-          <label for="nombre">Nombre del producto <span class="obligatorio">*</span></label>
-          <input type="text" id="nombre" name="nombre" placeholder="Ej. Leche entera 1 L" required>
-        </div>
-        <div class="campo col-2">
-          <label for="categoria">Categoría <span class="obligatorio">*</span></label>
-          <select id="categoria" name="categoria" required>
-            <option value="">Selecciona una categoría…</option>
-            <option value="Alimentos">Alimentos</option>
-            <option value="Bebidas">Bebidas</option>
-            <option value="Lácteos">Lácteos</option>
-            <option value="Limpieza">Limpieza</option>
-            <option value="Cuidado personal">Cuidado personal</option>
-            <option value="Panadería">Panadería</option>
-          </select>
-        </div>
-
-        <div class="campo col-completo">
-          <label for="descripcion">Descripción</label>
-          <textarea id="descripcion" name="descripcion" rows="3" placeholder="Breve descripción del producto…"></textarea>
-        </div>
-
-        <div class="campo">
-          <label for="precio">Precio (COP) <span class="obligatorio">*</span></label>
-          <input type="number" id="precio" name="precio" placeholder="0" min="1" step="1" required>
-        </div>
-        <div class="campo">
-          <label for="cantidad">Cantidad disponible <span class="obligatorio">*</span></label>
-          <input type="number" id="cantidad" name="cantidad" placeholder="0" min="0" step="1" required>
-        </div>
-        <div class="campo">
-          <label for="minimo">Stock mínimo</label>
-          <input type="number" id="minimo" name="minimo" placeholder="0" min="0" step="1">
-        </div>
-
-        <div class="campo">
-          <label for="unidad">Unidad de medida <span class="obligatorio">*</span></label>
-          <select id="unidad" name="unidad" required>
-            <option value="">Selecciona…</option>
-            <option value="unidad">unidad</option>
-            <option value="kg">kg</option>
-            <option value="litro">litro</option>
-            <option value="paquete">paquete</option>
-          </select>
-        </div>
-        <div class="campo">
-          <label for="vencimiento">Fecha de vencimiento</label>
-          <input type="date" id="vencimiento" name="vencimiento">
-        </div>
-        <div class="campo">
-          <label for="proveedor">Proveedor</label>
-          <input type="text" id="proveedor" name="proveedor" placeholder="Nombre del proveedor">
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar producto | SuperStock</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="encabezado">
+      <div class="encabezado__contenido">
+        <a href="index.html" class="marca"
+          ><span class="marca__logo"
+            ><svg
+              class="icono"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 4h2l2.4 10h9.2L19 7H6.2M9 19a1 1 0 100 .01M17 19a1 1 0 100 .01"
+              /></svg></span
+          >SuperStock</a
+        >
+        <nav class="menu" aria-label="Principal">
+          <a href="index.html" class="menu__enlace">Inicio</a>
+          <a href="productos.html" class="menu__enlace menu__enlace--activo"
+            >Productos</a
+          >
+          <a
+            href="registrar-producto.html"
+            class="boton boton--primario boton--pequeno"
+            ><span aria-hidden="true">+</span
+            ><span class="menu__nuevo"> Nuevo</span></a
+          >
+        </nav>
       </div>
-      <div class="formulario__pie">
-        <a href="productos.html" class="boton boton--secundario">Cancelar</a>
-        <button type="submit" class="boton boton--primario">Guardar cambios</button>
-      </div>
-    </form>
-  </main>
-  <script src="js/almacenamiento.js"></script>
-  <script src="js/productos.js"></script>
-  <script src="js/validaciones.js"></script>
-  <script src="js/codigo-barras.js"></script>
-  <script src="js/vista-formulario.js"></script>
-  <script src="js/vista-edicion.js"></script>
-</body>
+    </header>
+    <main class="contenedor contenedor--estrecho">
+      <h1 class="titulo-pagina">Editar producto</h1>
+      <p class="subtitulo-pagina">Modifica los campos y guarda los cambios.</p>
+
+      <p id="mensaje-no-encontrado" class="subtitulo-pagina" hidden>
+        No se encontró el producto.
+        <a href="productos.html" class="enlace-volver">Volver al listado</a>
+      </p>
+
+      <form class="formulario" action="#" method="post" novalidate>
+        <div class="formulario__rejilla">
+          <div class="campo col-2">
+            <label for="codigo"
+              >Código de barras (EAN-13)
+              <span class="obligatorio">*</span></label
+            >
+            <input
+              type="text"
+              id="codigo"
+              name="codigo"
+              class="codigo"
+              placeholder="7501234567893"
+              inputmode="numeric"
+              pattern="[0-9]{13}"
+              minlength="13"
+              maxlength="13"
+              required
+            />
+            <p class="campo__ayuda">
+              13 dígitos, con dígito verificador válido.
+            </p>
+          </div>
+          <div class="vista-previa" id="vista-previa"></div>
+
+          <div class="campo col-2">
+            <label for="nombre"
+              >Nombre del producto <span class="obligatorio">*</span></label
+            >
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ej. Leche entera 1 L"
+              required
+            />
+          </div>
+          <div class="campo col-2">
+            <label for="categoria"
+              >Categoría <span class="obligatorio">*</span></label
+            >
+            <select id="categoria" name="categoria" required>
+              <option value="">Selecciona una categoría…</option>
+              <option value="Alimentos">Alimentos</option>
+              <option value="Bebidas">Bebidas</option>
+              <option value="Lácteos">Lácteos</option>
+              <option value="Limpieza">Limpieza</option>
+              <option value="Cuidado personal">Cuidado personal</option>
+              <option value="Panadería">Panadería</option>
+            </select>
+          </div>
+
+          <div class="campo col-completo">
+            <label for="descripcion">Descripción</label>
+            <textarea
+              id="descripcion"
+              name="descripcion"
+              rows="3"
+              placeholder="Breve descripción del producto…"
+            ></textarea>
+          </div>
+
+          <div class="campo">
+            <label for="precio"
+              >Precio (COP) <span class="obligatorio">*</span></label
+            >
+            <input
+              type="number"
+              id="precio"
+              name="precio"
+              placeholder="0"
+              min="1"
+              step="1"
+              required
+            />
+          </div>
+          <div class="campo">
+            <label for="cantidad"
+              >Cantidad disponible <span class="obligatorio">*</span></label
+            >
+            <input
+              type="number"
+              id="cantidad"
+              name="cantidad"
+              placeholder="0"
+              min="0"
+              step="1"
+              required
+            />
+          </div>
+          <div class="campo">
+            <label for="minimo">Stock mínimo</label>
+            <input
+              type="number"
+              id="minimo"
+              name="minimo"
+              placeholder="0"
+              min="0"
+              step="1"
+            />
+          </div>
+
+          <div class="campo">
+            <label for="unidad"
+              >Unidad de medida <span class="obligatorio">*</span></label
+            >
+            <select id="unidad" name="unidad" required>
+              <option value="">Selecciona…</option>
+              <option value="unidad">unidad</option>
+              <option value="kg">kg</option>
+              <option value="litro">litro</option>
+              <option value="paquete">paquete</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="vencimiento">Fecha de vencimiento</label>
+            <input type="date" id="vencimiento" name="vencimiento" />
+          </div>
+          <div class="campo">
+            <label for="proveedor">Proveedor</label>
+            <input
+              type="text"
+              id="proveedor"
+              name="proveedor"
+              placeholder="Nombre del proveedor"
+            />
+          </div>
+        </div>
+        <div class="formulario__pie">
+          <a href="productos.html" class="boton boton--secundario">Cancelar</a>
+          <button type="submit" class="boton boton--primario">
+            Guardar cambios
+          </button>
+        </div>
+      </form>
+    </main>
+    <script src="js/almacenamiento.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/validaciones.js"></script>
+    <script src="js/codigo-barras.js"></script>
+    <script src="js/aviso.js"></script>
+    <script src="js/vista-formulario.js"></script>
+    <script src="js/vista-edicion.js"></script>
+  </body>
 </html>
