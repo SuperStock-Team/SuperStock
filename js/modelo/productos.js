@@ -8,7 +8,7 @@ function buscarProductoPorId(id) {
 
 function crearProducto(datosProducto) {
   const productos = obtenerProductos();
-  const nuevoProducto = { ...datosProducto, id: generarId() };
+  const nuevoProducto = { disponible: true, ...datosProducto, id: generarId() };
   productos.push(nuevoProducto);
   guardarProductos(productos);
   return nuevoProducto;
@@ -45,8 +45,25 @@ function filtrarProductos(productos, textoBusqueda) {
   );
 }
 
+const ESTADO_DISPONIBLE = "Disponible";
+const ESTADO_NO_DISPONIBLE = "No disponible";
+const ESTADO_AGOTADO = "Agotado";
+
+// Los productos guardados antes de existir este dato se consideran disponibles.
+function estaMarcadoDisponible(producto) {
+  return producto.disponible !== false;
+}
+
 function calcularEstadoStock(producto) {
-  return producto.cantidad === 0 ? "Agotado" : "Disponible";
+  if (!estaMarcadoDisponible(producto)) return ESTADO_NO_DISPONIBLE;
+  return producto.cantidad === 0 ? ESTADO_AGOTADO : ESTADO_DISPONIBLE;
+}
+
+function alternarDisponibilidad(id) {
+  const producto = buscarProductoPorId(id);
+  const cambios = { disponible: !estaMarcadoDisponible(producto) };
+  actualizarProducto(id, cambios);
+  return { ...producto, ...cambios };
 }
 
 function existeCodigoBarras(codigoBarras, idAExcluir = null) {

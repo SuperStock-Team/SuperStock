@@ -8,7 +8,7 @@ function mostrarEstadoStock(producto) {
   const etiqueta = document.getElementById("detalle-estado");
   const estado = calcularEstadoStock(producto);
   etiqueta.textContent = estado;
-  etiqueta.className = "etiqueta etiqueta--" + estado.toLowerCase();
+  etiqueta.className = "etiqueta " + claseEtiquetaStock(estado);
 }
 
 function mostrarDatosProducto(producto) {
@@ -29,9 +29,19 @@ function mostrarCodigoBarras(producto) {
   document.getElementById("detalle-barras").innerHTML = generarSvgEan13(producto.codigoBarras);
 }
 
+function mostrarImagenProducto(producto) {
+  const imagen = document.getElementById("detalle-imagen");
+  imagen.hidden = !producto.imagen;
+  if (producto.imagen) {
+    imagen.src = producto.imagen;
+    imagen.alt = "Imagen de " + producto.nombre;
+  }
+}
+
 function mostrarDetalleProducto(producto) {
   mostrarDatosProducto(producto);
   mostrarEstadoStock(producto);
+  mostrarImagenProducto(producto);
   mostrarCodigoBarras(producto);
   document.getElementById("enlace-editar").href = "editar-producto.html?id=" + producto.id;
 }

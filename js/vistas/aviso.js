@@ -6,11 +6,14 @@ function guardarAviso(texto) {
   sessionStorage.setItem(CLAVE_AVISO, texto);
 }
 
+let temporizadorAviso = null;
+
 function mostrarAviso(texto) {
   const elementoAviso = document.getElementById("aviso");
   elementoAviso.textContent = texto;
   elementoAviso.hidden = false;
-  setTimeout(() => {
+  clearTimeout(temporizadorAviso);
+  temporizadorAviso = setTimeout(() => {
     elementoAviso.hidden = true;
   }, DURACION_AVISO_MS);
 }

@@ -175,6 +175,39 @@ img { max-width: 100%; }
   border: 1px solid #a7f3d0; font-size: 0.85rem; font-weight: 600;
 }
 
+/* 10b. Imagen del producto y estado de disponibilidad */
+.producto-celda { display: flex; align-items: center; gap: 12px; }
+.producto-texto { min-width: 0; }
+.miniatura {
+  width: 52px; height: 52px; flex-shrink: 0; object-fit: cover;
+  border: 1px solid var(--borde); border-radius: var(--radio); background: var(--fondo);
+}
+.miniatura--vacia { display: flex; align-items: center; justify-content: center; color: var(--texto-suave); }
+.producto-descripcion {
+  max-width: 300px; color: var(--texto-suave); font-size: 0.78rem;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.etiqueta--no-disponible { background: #ffe4e6; color: var(--rojo); }
+.etiqueta, .precio { white-space: nowrap; }
+.etiqueta--boton { font-family: inherit; border: 1px solid transparent; cursor: pointer; }
+.etiqueta--boton:not(:disabled):hover { border-color: currentColor; }
+.etiqueta--boton:disabled { cursor: default; }
+
+.campo-imagen { display: flex; align-items: flex-start; gap: 16px; }
+.imagen-previa {
+  width: 96px; height: 96px; flex-shrink: 0; padding: 4px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px dashed var(--borde); border-radius: var(--radio);
+  background: var(--fondo); color: var(--texto-suave); font-size: 0.72rem; text-align: center;
+}
+.vista-previa { grid-row: span 2; }
+.imagen-previa img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+.campo-imagen__controles { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.detalle__imagen {
+  width: 100%; max-width: 240px; aspect-ratio: 1; margin: 0 auto; display: block; object-fit: cover;
+  border: 1px solid var(--borde); border-radius: 12px; background: var(--blanco);
+}
+
 /* 11. Tableta */
 @media (max-width: 900px) {
   .rejilla-4 { grid-template-columns: repeat(2, 1fr); }
@@ -214,6 +247,7 @@ img { max-width: 100%; }
 
   .formulario { padding: 16px; }
   .campo, .campo.col-2, .vista-previa { grid-column: 1 / -1; }
+  .vista-previa { grid-row: auto; }
   .formulario__pie { flex-direction: column-reverse; }
   .formulario__pie .boton { width: 100%; }
   .detalle__cabecera { flex-direction: column-reverse; align-items: flex-start; }

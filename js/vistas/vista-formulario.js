@@ -37,6 +37,7 @@ function leerDatosFormulario() {
     unidadMedida: leerTexto(IDS_CAMPOS.unidadMedida),
     fechaVencimiento: leerTexto(IDS_CAMPOS.fechaVencimiento),
     proveedor: leerTexto(IDS_CAMPOS.proveedor),
+    imagen: obtenerImagenSeleccionada(),
   };
 }
 
@@ -44,20 +45,11 @@ function rellenarFormulario(producto) {
   Object.entries(IDS_CAMPOS).forEach(([claveDato, idCampo]) => {
     document.getElementById(idCampo).value = producto[claveDato] ?? "";
   });
-}
-
-function limpiarErrores() {
-  document.querySelectorAll(".campo__error").forEach((mensaje) => mensaje.remove());
-  document.querySelectorAll(".campo--error").forEach((campo) => campo.classList.remove("campo--error"));
+  establecerImagenSeleccionada(producto.imagen ?? "");
 }
 
 function mostrarError(claveCampo, mensaje) {
-  const entrada = document.getElementById(IDS_CAMPOS[claveCampo]);
-  const parrafoError = document.createElement("p");
-  parrafoError.className = "campo__error";
-  parrafoError.textContent = mensaje;
-  entrada.closest(".campo").classList.add("campo--error");
-  entrada.after(parrafoError);
+  mostrarErrorEnCampo(document.getElementById(IDS_CAMPOS[claveCampo]), mensaje);
 }
 
 function mostrarErrores(errores) {

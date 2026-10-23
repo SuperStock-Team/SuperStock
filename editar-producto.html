@@ -35,6 +35,18 @@
         <div class="vista-previa" id="vista-previa"></div>
 
         <div class="campo col-2">
+          <label for="imagen">Imagen del producto</label>
+          <div class="campo-imagen">
+            <div class="imagen-previa" id="imagen-vista-previa"></div>
+            <div class="campo-imagen__controles">
+              <input type="file" id="imagen" name="imagen" accept="image/*">
+              <p class="campo__ayuda">Opcional. JPG, PNG o WEBP, hasta 5 MB.</p>
+              <button type="button" class="boton boton--secundario boton--pequeno" id="imagen-quitar" hidden>Quitar imagen</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="campo col-2">
           <label for="nombre">Nombre del producto <span class="obligatorio">*</span></label>
           <input type="text" id="nombre" name="nombre" placeholder="Ej. Leche entera 1 L" required>
         </div>
@@ -55,6 +67,8 @@
           <label for="descripcion">Descripción</label>
           <textarea id="descripcion" name="descripcion" rows="3" placeholder="Breve descripción del producto…"></textarea>
         </div>
+
+        
 
         <div class="campo">
           <label for="precio">Precio (COP) <span class="obligatorio">*</span></label>
@@ -98,7 +112,10 @@
   <script src="js/modelo/productos.js"></script>
   <script src="js/modelo/validaciones.js"></script>
   <script src="js/utilidades/codigo-barras.js"></script>
+  <script src="js/utilidades/imagen.js"></script>
   <script src="js/vistas/aviso.js"></script>
+  <script src="js/vistas/errores-campo.js"></script>
+  <script src="js/vistas/vista-imagen.js"></script>
   <script src="js/vistas/vista-formulario.js"></script>
   <script src="js/controladores/vista-edicion.js"></script>
 </body>

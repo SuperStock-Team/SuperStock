@@ -9,3 +9,7 @@ function formatearFecha(fechaIso) {
   const [anio, mes, dia] = fechaIso.split("-");
   return `${Number(dia)} de ${MESES_ABREVIADOS[Number(mes) - 1]} de ${anio}`;
 }
+
+function claseEtiquetaStock(estado) {
+  return "etiqueta--" + estado.toLowerCase().replaceAll(" ", "-");
+}
