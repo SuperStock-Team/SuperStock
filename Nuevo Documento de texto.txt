@@ -8,3 +8,5 @@ SuperStock/
 
 Eso es lo que pide tu documento del proyecto. Puedes usar estos códigos válidos para pruebas:
 7501234567893, 7501000123452 y 7505000102349.
+
+aplicar imagen, edición de atributos 
