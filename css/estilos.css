@@ -133,7 +133,7 @@ img { max-width: 100%; }
   padding: 8px; border: 1px dashed var(--borde); border-radius: var(--radio);
   background: var(--fondo); color: var(--texto-suave); font-size: 0.75rem; text-align: center;
 }
-.vista-previa__img { height: 80px; width: auto; }
+.vista-previa svg { height: 80px; width: auto; }
 .formulario__pie { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--borde); }
 
 /* 8. Detalle */
@@ -168,14 +168,21 @@ img { max-width: 100%; }
 .modal__botones { display: flex; gap: 12px; margin-top: 20px; }
 .modal__botones .boton { flex: 1; }
 
-/* 10. Tableta */
+/* 10. Aviso de confirmación */
+.aviso {
+  margin-bottom: 16px; padding: 12px 16px; border-radius: var(--radio);
+  background: var(--verde-claro); color: var(--verde-oscuro);
+  border: 1px solid #a7f3d0; font-size: 0.85rem; font-weight: 600;
+}
+
+/* 11. Tableta */
 @media (max-width: 900px) {
   .rejilla-4 { grid-template-columns: repeat(2, 1fr); }
   .portada__titulo { font-size: 2.2rem; }
   .detalle { grid-template-columns: 1fr; }
 }
 
-/* 11. Celular */
+/* 12. Celular */
 @media (max-width: 640px) {
   .encabezado__contenido { padding: 10px 16px; }
   .menu { gap: 2px; font-size: 0.8rem; }
@@ -211,6 +218,7 @@ img { max-width: 100%; }
   .formulario__pie .boton { width: 100%; }
   .detalle__cabecera { flex-direction: column-reverse; align-items: flex-start; }
 }
+<<<<<<< HEAD
 .producto {
   border: 1px solid #ccc;
   padding: 10px;
@@ -230,3 +238,5 @@ img { max-width: 100%; }
   object-fit: cover;
   border-radius: 4px;
 }
+=======
+>>>>>>> 4ceb6d30fc513a74c346e794b4c687b4c85feaf1

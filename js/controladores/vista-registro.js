@@ -11,9 +11,11 @@ function manejarEnvioRegistro(evento) {
   }
 
   crearProducto(datos);
-  window.location.href = 'productos.html';
+  guardarAviso("Producto «" + datos.nombre + "» añadido correctamente.");
+  window.location.href = "productos.html";
 }
 
+<<<<<<< HEAD:js/vista-registro.js
 formulario.addEventListener('submit', manejarEnvioRegistro);
 const productos = [];
 
@@ -33,3 +35,6 @@ document.getElementById('form-producto').addEventListener('submit', (e) => {
 
   mostrarProductos(productos);
 });
+=======
+formulario.addEventListener("submit", manejarEnvioRegistro);
+>>>>>>> 4ceb6d30fc513a74c346e794b4c687b4c85feaf1:js/controladores/vista-registro.js
